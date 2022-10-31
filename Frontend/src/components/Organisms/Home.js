@@ -1,6 +1,6 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col'
-import Button, { Ayush, Content, Text } from '../Atoms'
+import Button, { Ayush, Text } from '../Atoms'
 import { Link } from "react-router-dom";
 
 const Home = () => {

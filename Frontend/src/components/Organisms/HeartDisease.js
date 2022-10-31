@@ -3,7 +3,7 @@ import '../../App.css';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from '../Atoms';
+import Button, { Ayush } from '../Atoms';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Content, Heading, ResultBox, Text } from '../Atoms';
 import Label from '../Molecules/Label';
@@ -261,15 +261,17 @@ class HeartDisease extends Component {
               </Col>
             </Row>
           </Form>
-          {result === "" ? null :
+          
+        </Content>
+        {result === "" ? null :
             (<Row>
               <Col >
+              <Ayush>
               <ResultBox><h5 id="result">{result}</h5></ResultBox>
-                
+              </Ayush> 
               </Col>
             </Row>)
           }
-        </Content>
         <Text>By Ayush Kumar</Text>
       </div>
     );

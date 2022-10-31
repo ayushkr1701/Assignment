@@ -126,7 +126,7 @@ class MainClass(Resource):
 			df.drop('HeartDisease', axis=1, inplace=True)
 			output = classifier.predict_proba(df[-1:])
 			pred = round(output[0][1]*100, 2)
-			prediction_text='Patient has {0}%'.format(pred)
+			prediction_text='Patient has {0}% chances of having cancer.'.format(pred)
 			response = jsonify({
 				"statusCode": 200,
 				"status": "Prediction made",

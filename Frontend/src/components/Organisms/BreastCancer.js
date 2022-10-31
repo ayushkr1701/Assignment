@@ -6,11 +6,9 @@ import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.css';
 import Button, { Ayush, Content, Heading, ResultBox, Text } from '../Atoms';
 import Label from '../Molecules/Label';
-import Container from 'react-bootstrap/Container';
 
 
 class BreastCancer extends Component {
-
   constructor(props) {
     super(props);
 
@@ -44,7 +42,7 @@ class BreastCancer extends Component {
   handlePredictClick = (event) => {
     const formData = this.state.formData;
     this.setState({ isLoading: true });
-    fetch('http://127.0.0.1:5000/BreastCancerApi/', 
+    fetch('http://127.0.0.1:5000/BreastCancerApi/',
       {
         headers: {
           'Accept': 'application/json',
@@ -79,76 +77,76 @@ class BreastCancer extends Component {
           <Form>
             <Form.Row>
               <Form.Group as={Col}>
-                <Label for="clump_thickness" title="Clump Thickenss"/>
+                <Label for="clump_thickness" title="Clump Thickenss" />
                 <Form.Control
-                as="input"
-                name="clump_thickness"
-                value={formData.clump_thickness}
-                onChange={this.handleChange} />
+                  as="input"
+                  name="clump_thickness"
+                  value={formData.clump_thickness}
+                  onChange={this.handleChange} />
 
 
-                <Label for="uniform_cell_size" title="Uniform Cell Size"/>
+                <Label for="uniform_cell_size" title="Uniform Cell Size" />
                 <Form.Control
-                as="input"
-                name="uniform_cell_size"
-                value={formData.uniform_cell_size}
-                onChange={this.handleChange} />
+                  as="input"
+                  name="uniform_cell_size"
+                  value={formData.uniform_cell_size}
+                  onChange={this.handleChange} />
 
 
-                <Label for="uniform_cell_shape" title="Uniform Cell Shape"/>
+                <Label for="uniform_cell_shape" title="Uniform Cell Shape" />
                 <Form.Control
-                as="input"
-                name="uniform_cell_shape"
-                value={formData.uniform_cell_shape}
-                onChange={this.handleChange} />
+                  as="input"
+                  name="uniform_cell_shape"
+                  value={formData.uniform_cell_shape}
+                  onChange={this.handleChange} />
               </Form.Group>
               <Form.Group as={Col}>
-                <Label for="cmarginal_adhesion" title="Marginal Adhesion"/>
+                <Label for="cmarginal_adhesion" title="Marginal Adhesion" />
                 <Form.Control
-                as="input"
-                name="marginal_adhesion"
-                value={formData.marginal_adhesion}
-                onChange={this.handleChange} />
+                  as="input"
+                  name="marginal_adhesion"
+                  value={formData.marginal_adhesion}
+                  onChange={this.handleChange} />
 
 
-                <Label for="single_epithelial_size" title="Single Epithelial Size"/>
+                <Label for="single_epithelial_size" title="Single Epithelial Size" />
                 <Form.Control
-                as="input"
-                name="single_epithelial_size"
-                value={formData.single_epithelial_size}
-                onChange={this.handleChange} />
+                  as="input"
+                  name="single_epithelial_size"
+                  value={formData.single_epithelial_size}
+                  onChange={this.handleChange} />
 
 
-                <Label for="bare_nuclei" title="Bare Nuclei"/>
+                <Label for="bare_nuclei" title="Bare Nuclei" />
                 <Form.Control
-                as="input"
-                name="bare_nuclei"
-                value={formData.bare_nuclei}
-                onChange={this.handleChange} />
+                  as="input"
+                  name="bare_nuclei"
+                  value={formData.bare_nuclei}
+                  onChange={this.handleChange} />
               </Form.Group>
               <Form.Group as={Col}>
-                <Label for="bland_chromatin" title="Bland Chromatin"/>
+                <Label for="bland_chromatin" title="Bland Chromatin" />
                 <Form.Control
-                as="input"
-                name="bland_chromatin"
-                value={formData.bland_chromatin}
-                onChange={this.handleChange} />
+                  as="input"
+                  name="bland_chromatin"
+                  value={formData.bland_chromatin}
+                  onChange={this.handleChange} />
 
 
-                <Label for="normal_nucleoli" title="Normal Nucleoli"/>
+                <Label for="normal_nucleoli" title="Normal Nucleoli" />
                 <Form.Control
-                as="input"
-                name="normal_nucleoli"
-                value={formData.normal_nucleoli}
-                onChange={this.handleChange} />
+                  as="input"
+                  name="normal_nucleoli"
+                  value={formData.normal_nucleoli}
+                  onChange={this.handleChange} />
 
 
-                <Label for="mitoses" title="Mitoses"/>
+                <Label for="mitoses" title="Mitoses" />
                 <Form.Control
-                as="input"
-                name="mitoses"
-                value={formData.mitoses}
-                onChange={this.handleChange} />
+                  as="input"
+                  name="mitoses"
+                  value={formData.mitoses}
+                  onChange={this.handleChange} />
               </Form.Group>
             </Form.Row>
             <Row>
@@ -156,7 +154,7 @@ class BreastCancer extends Component {
                 <Button className='button1' theme="ROUNDED"
                   disabled={isLoading}
                   onClick={!isLoading ? this.handlePredictClick : null}>
-                  { isLoading ? 'Making prediction' : 'Predict' }
+                  {isLoading ? 'Making prediction' : 'Predict'}
                 </Button>
               </Col>
               <Col>
@@ -170,17 +168,18 @@ class BreastCancer extends Component {
               </Col>
             </Row>
           </Form>
-          {result === "" ? null :
-            (<Row>
-              <Col>
-              <ResultBox><h5 id="result">{result}</h5></ResultBox>
-                
-              </Col>
-            </Row>)
-          }
         </Content>
+        {result === "" ? null :
+          (<Row>
+            <Col >
+              <Ayush>
+                <ResultBox><h5 id="result">{result}</h5></ResultBox>
+              </Ayush>
+            </Col>
+          </Row>)
+        }
         <Text>By Ayush Kumar</Text>
-        
+
       </div>
     );
   }

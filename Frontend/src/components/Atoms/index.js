@@ -27,7 +27,7 @@ export const Content = styled.div`
   margin: auto;
   margin-top: 20px;
   width: 50%;
-  height: 400px;
+  height: 350px;
   overflow-y: scroll;
   background-color: #fff;
   padding: 10px;
@@ -52,7 +52,6 @@ export const ResultBox = styled.div`
 
 `;
 
-//Layout atoms
 export const Flex = styled.div`
 	display: flex;
 `;
@@ -63,22 +62,12 @@ export const Center = styled(Flex)`
 	align-items: center;
 `;
 
-  type Props = {
-    type: string,
-    theme: string,
-    size: string,
-    onClick: Function,
-    children: React.Node,
-    className: string,
-    disabled: Function,
-  }
-  const Button = (props: Props): React.Element<React> => {
-    const { type, onClick, children,  className, disabled } = props
-  
-    return (
-      <button type={type} onClick={onClick} disabled={disabled} className={className}>
-        {children}
+  function Button(props){
+    return(
+      <button type={props.type} onClick={props.onClick} disabled={props.disabled} className={props.className}>
+        {props.children}
       </button>
+
     )
   }
   export default Button
