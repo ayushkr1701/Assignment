@@ -87,7 +87,7 @@ model2=app.model('Prediction Params',
 
 
 })
-clf =joblib.load('random_forest.joblib')
+clf =joblib.load('clf.joblib')
 
 classifier = joblib.load('XGBnew.pkl')
 DATASET_PATH = 'Dataset/Cleaned.csv'
